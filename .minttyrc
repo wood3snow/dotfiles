@@ -1,0 +1,6 @@
+BoldAsFont=no
+Transparency=medium
+CursorType=block
+Font=Ricty Diminished
+FontHeight=14
+Term=xterm-256color

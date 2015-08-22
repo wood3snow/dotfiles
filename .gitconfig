@@ -1,0 +1,21 @@
+[user]
+  name = wood3snow
+  email = wood3snow@quietstar.net
+
+[color]
+  ui = auto
+  status = auto
+  diff = auto
+  branch = auto
+  interactive = auto
+  grep = auto
+
+[core]
+  excludesfile = ~/.gitignore_global
+  editor = vim
+  autocrlf = false
+  precomposeunicode = true
+  quotepath = false
+
+[push]
+  default = simple

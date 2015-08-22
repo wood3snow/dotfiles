@@ -1,0 +1,92 @@
+######################################################################
+### macosx個別設定
+######################################################################
+
+
+# NOTE: pathの設定
+typeset -U path
+path=(
+  ~/bin(N-/)
+  /usr/local/bin(N-/)
+  /usr/local/sbin(N-/)
+  /usr/local/opt/coreutils/libexec/gnubin(N-/)
+  ${path}
+)
+
+
+# NOTE: fpathの設定
+typeset -U fpath
+fpath=(
+  ~/.zsh/completion(N-/)
+  /usr/local/share/zsh-completions(N-/)
+  ${fpath}
+)
+
+
+# NOTE: cdpathの設定
+typeset -U cdpath
+cdpath=(
+  ~/Vagrant(N-/)
+  ${cdpath}
+)
+
+
+# NOTE: manpathの設定
+typeset -U manpath
+manpath=(
+  /usr/local/share/man(N-/)
+  /usr/local/opt/coreutils/libexec/gnuman(N-/)
+  ${manpath}
+)
+
+
+# NOTE: sudo用pathの設定
+typeset -U sudo_path
+typeset -xT SUDO_PATH sudo_path
+sudo_path=(
+  /usr/local/sbin(N-/)
+  /usr/sbin(N-/)
+  /sbin(N-/)
+)
+
+
+# NOTE: TERMの設定
+export TERM='xterm-256color'
+
+
+# NOTE: PAGERの設定
+export PAGER='less'
+export LESS='--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS'
+export LESSHISTFILE='~/.lesshst'
+
+
+# NOTE: EDITORの設定
+export EDITOR=vim
+export VIM=~/.vim
+
+# vimは、mvimで起動
+alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+
+# vimがない場合は、viを起動
+if ! type vim > /dev/null 2>&1
+then
+  alias vim=vi
+fi
+
+
+# NOTE: rbenvの設定
+if type rbenv > /dev/null 2>&1; then
+  eval "$(rbenv init - zsh)"
+fi
+
+
+# NOTE: nodebrewの設定
+if type nodebrew > /dev/null 2>&1; then
+  path=( ~/.nodebrew/current/bin(N-/) ${path} )
+fi
+
+
+# ----------------------------------------------------------------------
+# 未整理:
+# ----------------------------------------------------------------------
+eval "$(direnv hook zsh)"
