@@ -51,8 +51,8 @@ export TERM='xterm-256color'
 
 # NOTE: PAGERの設定
 export PAGER='less'
-#export LESS='--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS'
-#export LESSHISTFILE='~/.lesshst'
+export LESS='--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS'
+export LESSHISTFILE='~/.lesshst'
 
 
 # NOTE: EDITORの設定

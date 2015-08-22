@@ -7,8 +7,10 @@
 # Lang:
 # ----------------------------------------------------------------------
 # NOTE: locale の設定
-export LANG=ja_JP.UTF-8
-export LESSCHARSET=utf-8
+if [ -z "$LANG" ]; then
+  export LANG=ja_JP.UTF-8
+  export LESSCHARSET=utf-8
+fi
 
 
 # ----------------------------------------------------------------------
