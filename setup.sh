@@ -12,6 +12,12 @@ DOT_FILES=(
   .zshenv
 )
 
+if [ ! -d $HOME/dotfiles ]; then
+  cd $HOME
+  git clone git@github.com:wood3snow/dotfiles.git dotfiles
+fi
+
+
 for file in ${DOT_FILES[@]}
 do
   if [ -a $HOME/$file ]; then
