@@ -221,7 +221,7 @@ endfunction
 let g:vimfiler_as_default_explorer = 1
 
 " 隠しファイルを表示
-let g:vimfiler_ignore_pattern = ''
+"let g:vimfiler_ignore_pattern = ''
 
 " ディレクトリを広げた場合、カーソルの場所をそのままにする
 let g:vimfiler_expand_jump_to_first_child=0
