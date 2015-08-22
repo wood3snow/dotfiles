@@ -16,3 +16,202 @@ set viminfo+=n~/.vim/.viminfo
 
 " .un~ファイルを作成しない
 set noundofile
+
+
+" ------------------------------------------------------------
+" エンコード関連:
+" ------------------------------------------------------------
+" 文字コードをutf-8にする
+set encoding=utf-8
+
+" 端末の出力で利用するエンコードをutf-8にする
+set termencoding=utf-8
+
+" ファイルを開く際に試すエンコード
+set fileencodings=ucs-bom,utf-8,iso-2022-jp,sjis,euc-jp
+
+" 改行コードをunix形式にする
+set fileformat=unix
+
+" 改行コードの自動認識
+set fileformats=unix,dos,mac
+
+
+" ------------------------------------------------------------
+" 検索関連:
+" ------------------------------------------------------------
+" 大文字小文字を区別しない
+set ignorecase
+
+" 大文字の場合は、小文字を区別させない
+set smartcase
+
+" インクリメンタルサーチを有効
+set incsearch
+
+" 検索結果をハイライト表示
+set hlsearch
+
+" ファイルの末尾の検索後、先頭から再検索する
+set wrapscan
+
+
+" ------------------------------------------------------------
+" 画面表示関連:
+" ------------------------------------------------------------
+" 行番号を表示
+set number
+
+" ステータスラインを常に表示する
+set laststatus=2
+
+" 折り返し表示する
+set wrap
+
+" 全角スペース・行末のスペース・タブの可視化
+set list
+set listchars=tab:»\ ,trail:\ ,eol:↲,extends:»,precedes:«,nbsp:%
+
+" シンタックスカラーを有効
+syntax enable
+
+
+" ------------------------------------------------------------
+" 編集関連:
+" ------------------------------------------------------------
+" タブ文字をスペース文字に変更
+set expandtab
+
+" 画面上の見た目のタブのスペース文字数
+set tabstop=2
+
+" 実際に挿入されるタブのスペース文字数
+" NOTE: 0: tabstopと同じ値になる
+set softtabstop=0
+
+" オートインデントによって挿入されるインデント幅
+set shiftwidth=2
+
+" 改行時のインデントをそろえる
+"set autoindent
+
+" 高度なインデントを行う
+set smartindent
+
+" insertモード時に、backspaceキーでどこでも削除可能にする
+set backspace=start,eol,indent
+
+" モードラインを有効
+set modeline
+
+" OSのクリップボードをレジスタ指定無しで Yank, Put 出来るようにする
+set clipboard=unnamed,unnamedplus
+
+" 対応するカッコを強調表示
+set showmatch
+
+" <>もカッコと同様に強調表示
+set matchpairs+=<:>
+
+" バッファが保存されていない場合でも、他のバッファを表示可能にする
+set hidden
+
+" CTRL-aとCTRL-x使用時の数の増減で、8進数を使用しない
+set nrformats=hex
+
+
+
+
+
+
+
+
+" ------------------------------------------------------------
+" カラースキーム:
+" ------------------------------------------------------------
+" カラースキームをmolokaiにする
+colorscheme molokai
+
+" 背景を黒にする
+highlight Normal ctermbg=0 guibg=#000000
+
+" タブ、改行を青色にする
+highlight SpecialKey ctermfg=4
+highlight NonText ctermfg=4
+
+" 不明？
+"highlight Statement gui=none
+
+" neocompleteのカラー設定
+"highlight Pmenu ctermbg=4
+"highlight PmenuSel ctermbg=1
+"highlight PMenuSbar ctermbg=4
+
+
+" ------------------------------------------------------------
+" その他:
+" ------------------------------------------------------------
+
+
+
+
+
+" ------------------------------------------------------------
+" 未整理:
+" ------------------------------------------------------------
+" ------------------------------------------------------------
+" マウス関連:
+" ------------------------------------------------------------
+" マウスが可能ならば利用する
+if has('mouse')
+  set mouse=a
+  if has('mouse_sgr') || v:version > 703 || v:version == 703 && has('patch632')
+    set ttymouse=sgr
+  else
+    set ttymouse=xterm2
+  endif
+
+  " 右クリックでペースト
+  nnoremap <RightMouse> "+p
+  xnoremap <RightMouse> "+p
+  inoremap <RightMouse> <C-r><C-o>+
+  cnoremap <RightMouse> <C-r>+
+endif
+
+" ------------------------------------------------------------
+" コマンドライン関連:
+" ------------------------------------------------------------
+" コマンドラインを1行にする
+set cmdheight=1
+
+" ステータスラインにtabキー補完表示
+set wildmenu
+
+" 1回目のtabキーで補完リスト表示、2回目のtabキーで完全補完する
+set wildmode=list:longest,full
+
+" コマンドラインの履歴を10000件保存する
+set history=10000
+
+
+" ------------------------------------------------------------
+" キーボード関連:
+" ------------------------------------------------------------
+" Use <Leader> in global plugin.
+let g:mapleader='¥'
+
+" カスタマイズ用のキーマップ
+nnoremap , <Nop>
+
+" 上記設定のためデフォルトの,キーを、,,キーへ変更
+noremap ,, ,
+
+" unite.vim用設定
+nmap                 ,u          [unite]
+nnoremap <silent>    [unite]u    :<C-u>Unite
+nnoremap <silent>    [unite]b    :<C-u>Unite buffer<CR>
+nnoremap <silent>    [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
+
+" vimfiler用のファイラー表示
+nnoremap <silent>    ,f    :<C-u>VimFiler<CR>
+nnoremap <silent>    ,z    :<C-u>VimFiler -split -simple -winwidth=30 -no-quit<CR>

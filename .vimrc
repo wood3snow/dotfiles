@@ -59,6 +59,13 @@ if filereadable(expand('~/.vim/conf.d/.vimrc.basic'))
 endif
 
 
+" GUI設定
+if has('gui_running')
+  if filereadable(expand('~/.vim/conf.d/.vimrc.gui'))
+    source ~/.vim/conf.d/.vimrc.gui
+  endif
+endif
+
 
 
 
