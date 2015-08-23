@@ -23,6 +23,7 @@ fpath=(
 # NOTE: cdpathの設定
 typeset -U cdpath
 cdpath=(
+  ~/Vagrant(N-/)
   ${cdpath}
 )
 
@@ -64,3 +65,18 @@ if ! type vim > /dev/null 2>&1
 then
   alias vim=vi
 fi
+
+
+# NOTE: rbenvの設定
+path=(
+  ~/.rbenv/bin(N-/)
+  ${path}
+)
+if type rbenv > /dev/null 2>&1; then
+  eval "$(rbenv init - zsh)"
+fi
+
+
+# ----------------------------------------------------------------------
+# 未整理:
+# ----------------------------------------------------------------------
