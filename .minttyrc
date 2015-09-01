@@ -1,6 +1,9 @@
-BoldAsFont=no
+BoldAsFont=yes
 Transparency=medium
 CursorType=block
 Font=Ricty Diminished
-FontHeight=14
+FontHeight=11
 Term=xterm-256color
+AllowBlinking=yes
+Rows=26
+Columns=110
