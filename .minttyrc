@@ -7,3 +7,5 @@ Term=xterm-256color
 AllowBlinking=yes
 Rows=26
 Columns=95
+CopyOnSelect=no
+CopyAsRTF=no
