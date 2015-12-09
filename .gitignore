@@ -5,6 +5,7 @@
 /.vim/.netrwhist
 /.vim/.swp
 /.vim/.viminfo
+/.vim/.viminfo.tmp
 
 /.zsh/.zcompdump
 /.zsh/.zsh_history
