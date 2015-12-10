@@ -78,7 +78,8 @@ fi
 
 # NOTE: rbenvの設定
 if type rbenv > /dev/null 2>&1; then
-  eval "$(rbenv init - zsh)"
+  #eval "$(rbenv init - zsh)"
+  eval "$(rbenv init -)"
 fi
 
 
