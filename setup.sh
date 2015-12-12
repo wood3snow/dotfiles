@@ -6,6 +6,7 @@ DOT_FILES=(
   .gitignore_global
   .lesshst
   .minttyrc
+  .tmux.conf
   .vim
   .vimrc
   .zsh
