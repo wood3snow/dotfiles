@@ -64,6 +64,9 @@ NeoBundle 'tomtom/tcomment_vim'
 " surround.vim:
 NeoBundle 'surround.vim'
 
+" カット＆ペースト
+NeoBundle 'ConradIrwin/vim-bracketed-paste'
+
 
 " ------------------------------------------------------------
 " neobundleプラグイン読込関連終了:
