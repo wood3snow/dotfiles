@@ -78,8 +78,13 @@ fi
 
 # NOTE: rbenvの設定
 if type rbenv > /dev/null 2>&1; then
-  #eval "$(rbenv init - zsh)"
   eval "$(rbenv init -)"
+fi
+
+
+# NOTE: pyenvの設定
+if type pyenv > /dev/null 2>&1; then
+  eval "$(pyenv init -)"
 fi
 
 
