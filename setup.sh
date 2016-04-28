@@ -45,23 +45,42 @@ DOT_FILES=(
 
 for file in ${DOT_FILES[@]}
 do
-  if [ ! -e $HOME/$file ]; then
-    ls -s $HOME/{DOTS_DIR}/${file} $HOME/${file}
+  if [ ! -e $HOME/${file} ]; then
+    ln -s $HOME/${DOTS_DIR}/${file} $HOME/${file}
     echo "シンボリックリンクを貼りました: $HOME/${file}"
   fi
 done
 
 
-# gitの設定(unix共通設置)
-file='.gitconfig_os'
-if [ ! -e $HOME/${file} ]; then
-  ln -s $HOME/${DOTS_DIR}/${file}_${UNIX} $HOME/${file}
-  echo "シンボリックリンクを貼りました: $HOME/${file}"
-fi
+##### シンボリックリンクの作成(unix共通設定)
+DOT_FILES=(
+  .gitconfig_os
+)
+for file in ${DOT_FILES[@]}
+do
+  if [ ! -e $HOME/${file} ]; then
+    ln -s $HOME/${DOTS_DIR}/${file}_${UNIX} $HOME/${file}
+    echo "シンボリックリンクを貼りました: $HOME/${file}"
+  fi
+done
 
 
-# Create ~/.lesshst
-[ ! -f ~/.lesshst ] && touch ~/.lesshst && echo "~/.lesshst を作成しました"
+##### シンボリックリンクの作成(OSごとの設定)
+DOT_FILES=(
+#  .xxxx_os
+)
+for file in ${DOT_FILES[@]}
+do
+  if [ ! -e $HOME/${file} ]; then
+    ln -s $HOME/${DOTS_DIR}/${file}_${OS} $HOME/${file}
+    echo "シンボリックリンクを貼りました: $HOME/${file}"
+  fi
+done
+
+
+# ~/.lesshst の作成
+[ ! -f $HOME/.lesshst ] && touch $HOME/.lesshst && echo "$HOME/.lesshst を作成しました"
+
 
 # Install neobundle for vim
 ###[ ! -d ~/.vim/bundle ] && mkdir -p ~/.vim/bundle && git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim && echo "you should run following command to setup plugins ->  vim -c ':NeoBundleInstall'"
