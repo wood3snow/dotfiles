@@ -1,6 +1,6 @@
-[user]
-  name = wood3snow
-  email = wood3snow@quietstar.net
+[include]
+  path = .gitconfig_user
+  path = .gitconfig_os
 
 [color]
   ui = auto
@@ -12,7 +12,6 @@
 
 [core]
   excludesfile = ~/.gitignore_global
-  editor = vim
   autocrlf = false
   precomposeunicode = true
   quotepath = false
