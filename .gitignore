@@ -1,11 +1,13 @@
 
 /.lesshst
 
-/.vim/bundle/**
+/.vim/dein/**
 /.vim/.netrwhist
 /.vim/.swp
 /.vim/.viminfo
 /.vim/.viminfo.tmp
+/.vim/.NERDTreeBookmarks
+#/.vim/bundle/**
 
 /.zsh/.zcompdump
 /.zsh/.zsh_history
