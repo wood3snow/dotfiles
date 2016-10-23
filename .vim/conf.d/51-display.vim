@@ -9,8 +9,8 @@ set number
 set numberwidth=5
 
 
-" 折り返し表示しない
-set nowrap
+" 折り返し表示する
+set wrap
 
 
 " 全角スペース・行末のスペース・タブの可視化
