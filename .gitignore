@@ -7,7 +7,6 @@
 /.vim/.viminfo
 /.vim/.viminfo.tmp
 /.vim/.NERDTreeBookmarks
-#/.vim/bundle/**
 
 /.zsh/.zcompdump
 /.zsh/.zsh_history

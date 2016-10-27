@@ -35,7 +35,7 @@ set columns=95
 set lines=30
 
 " 透過表示
-set transparency=13
+set transparency=8
 
 " タブを常に表示
 set showtabline=2

@@ -110,7 +110,7 @@ linux*)
   [ -f ${ZDOTDIR}/.zshrc.linux ] && source ${ZDOTDIR}/.zshrc.linux
   ;;
 darwin*)
-  [ -f ${ZDOTDIR}/.zshrc.osx ] && source ${ZDOTDIR}/.zshrc.osx
+  [ -f ${ZDOTDIR}/.zshrc.macos ] && source ${ZDOTDIR}/.zshrc.macos
   ;;
 cygwin*)
   [ -f ${ZDOTDIR}/.zshrc.cygwin ] && source ${ZDOTDIR}/.zshrc.cygwin
