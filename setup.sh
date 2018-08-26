@@ -31,9 +31,9 @@ fi
 
 ##### シンボリックリンクの作成
 DOT_FILES=(
+  .config
   .gemrc
   .gitconfig
-  .gitignore_global
   .lesshst
   .minttyrc
   .tmux.conf
